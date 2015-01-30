@@ -3,20 +3,17 @@
 ## Indice
 Il seguente progetto è composto da:
 
-1. Report "#WikiTrasparenza - Chi apre davvero i dati sulle risorse pubbliche"
-2. Nota metodologica al report
-3. Dati analizzati
-4. Query SPARQL per interrogare la wiki
-5. Dump CSV dei file presenti nella wiki
+1. [Report "#WikiTrasparenza - Chi apre davvero i dati sulle risorse pubbliche"](https://github.com/nexacenter/wikitrasparenza#report)
+2. [Nota metodologica al report](https://github.com/nexacenter/wikitrasparenza#nota-metodologica)
+3. [Dati analizzati](https://github.com/nexacenter/wikitrasparenza#dati-analizzati)
+4. [Query SPARQL per interrogare la wiki](https://github.com/nexacenter/wikitrasparenza#query-sparql)
+5. [Dump CSV dei file presenti nella wiki](https://github.com/nexacenter/wikitrasparenza#dump-csv)
 
 ## Report
 Il report, in cui vengono esposti i risultati dell'analisi dei dati, è disponibile a questo indirizzo: http://nexa.polito.it/working-paper/2015-1.
 
 ## Nota metodologica
 Nella nota metodologica viene spiegato come è stata costruita la wiki semantica, come sono strutturati i dati, come è avvenuto il censimento dei dataset. Disponibile su: http://nexa.polito.it/nexacenterfiles/nota-metodologica-report-trasparenza.pdf.
-
-## Query SPARQL
-Le query SPARQL per interrogare i dati della wiki sono nel file "[Queries.SPARQL](https://github.com/nexacenter/wikitrasparenza/tree/master/queries/Queries.SPARQL)". L'endpoint SPARQL è presente all'indirizzo: https://trasparenza.nexacenter.org/sparql. Altre query SPARQL specifiche sono presenti all'indirizzo: https://trasparenza.nexacenter.org/wiki/Query_sparql.
 
 ## Dati analizzati
 Sono stati analizzati 5 dataset per 119 Comuni capoluogo di Provincia o con più di 100 mila abitanti.
@@ -28,6 +25,9 @@ I 5 dataset analizzati analizzati riguardano ognuno un obbligo di pubblicazione 
 * **Sovvenzioni, sussidi e contributi** (Art.26-27 d.lgs. n. 33/2013, di seguito “obbligo di pubblicazione sovvenzioni”)
 	4. Atti di concessione
 	5. Albo dei beneficiari 
+
+## Query SPARQL
+Le query SPARQL per interrogare i dati della wiki sono nel file "[Queries.SPARQL](https://github.com/nexacenter/wikitrasparenza/tree/master/queries/Queries.SPARQL)". L'endpoint SPARQL è presente all'indirizzo: https://trasparenza.nexacenter.org/sparql. Altre query SPARQL specifiche sono presenti all'indirizzo: https://trasparenza.nexacenter.org/wiki/Query_sparql.
 
 ## Dump CSV
 Sono disponibili [i dump CSV dei dati presenti nella wiki](https://github.com/nexacenter/wikitrasparenza/tree/master/data). Ogni singolo file CSV rappresenta una categoria di dataset analizzati (Albo beneficiari, atti di concessioni, Locazioni attive, locazioni passive, patrimonio immobiliare). I dump sono i risultati delle queries esposte nel file "[Queries.SPARQL](https://github.com/nexacenter/wikitrasparenza/tree/master/queries/Queries.SPARQL)".
