@@ -16,8 +16,7 @@ Il report, in cui vengono esposti i risultati dell'analisi dei dati, è disponib
 Nella nota metodologica viene spiegato come è stata costruita la wiki semantica, come sono strutturati i dati, come è avvenuto il censimento dei dataset. Disponibile su: http://nexa.polito.it/nexacenterfiles/nota-metodologica-report-trasparenza.pdf.
 
 ## Query SPARQL
-Le query SPARQL per interrogare i dati della wiki sono nel file "Queries.SPARQL". L'endpoint SPARQL è presente all'indirizzo: https://trasparenza.nexacenter.org/sparql 
-Altre query SPARQL specifiche sono presenti all'indirizzo: https://trasparenza.nexacenter.org/wiki/Query_sparql
+Le query SPARQL per interrogare i dati della wiki sono nel file "[Queries.SPARQL](https://github.com/nexacenter/wikitrasparenza/tree/master/queries/Queries.SPARQL)". L'endpoint SPARQL è presente all'indirizzo: https://trasparenza.nexacenter.org/sparql. Altre query SPARQL specifiche sono presenti all'indirizzo: https://trasparenza.nexacenter.org/wiki/Query_sparql.
 
 ## Dati analizzati
 Sono stati analizzati 5 dataset per 119 Comuni capoluogo di Provincia o con più di 100 mila abitanti.
@@ -31,7 +30,7 @@ I 5 dataset analizzati analizzati riguardano ognuno un obbligo di pubblicazione 
 	5. Albo dei beneficiari 
 
 ## Dump CSV
-Sono disponibili [i dump CSV dei dati presenti nella wiki](https://github.com/nexacenter/wikitrasparenza/tree/master/data). Ogni singolo file CSV rappresenta una categoria di dataset analizzati (Albo beneficiari, atti di concessioni, Locazioni attive, locazioni passive, patrimonio immobiliare). I dump sono i risultati delle queries esposte nel file "Queries.SPARQL".
+Sono disponibili [i dump CSV dei dati presenti nella wiki](https://github.com/nexacenter/wikitrasparenza/tree/master/data). Ogni singolo file CSV rappresenta una categoria di dataset analizzati (Albo beneficiari, atti di concessioni, Locazioni attive, locazioni passive, patrimonio immobiliare). I dump sono i risultati delle queries esposte nel file "[Queries.SPARQL](https://github.com/nexacenter/wikitrasparenza/tree/master/queries/Queries.SPARQL)".
 
 Ogni file CSV è composto da diverse colonne. Le prime 5, comuni a tutti e 5 i dump, sono:
 * __dataset__: URI alla wiki del dataset analizzato

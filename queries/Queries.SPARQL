@@ -1,0 +1,241 @@
+# Query SPARQL 
+
+## Locazioni attive
+
+    PREFIX categoria:   <http://trasparenza.nexacenter.org/id/Categoria-3A>
+    PREFIX property: <http://trasparenza.nexacenter.org/id/Propriet-C3-A0-3A>
+    PREFIX entity: <http://trasparenza.nexacenter.org/id/>
+    SELECT distinct ?dataset ?formato ?URLdataset ?URLsezione ?tracciaRecordAttributi ?UbicazionePresenzaAttributo ?IndirizzoCompletoPresenzaAttributo ?DatiCatastaliPresenzaAttributo ?FinalitaUtilizzoPrezenza
+     ?SuperficiePresenzaAttributo ?CanoneCorrispostoPresenzaAttributo ?PeriodicitaCanonePresenzaAttributo 
+     ?CanoneInizialePresenzaAttributo ?DataStipulaContrattoPresenzaAttributo ?DataScadenzaContrattoPresenzaAttributo
+     ?LocatarioPresenzaAttributo ?DescrizioneImmobilePresenzaAttributo ?NonPubblicato ?PubblicatoMale ?URIdbpediaEnte
+    WHERE
+    {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?dataset a categoria:CanoneLocazioneAttivo;
+                           property:Last_editor_is-23aux ?author;
+                           property:RiguardaEnte   ?ente.
+                OPTIONAL { ?dataset property:HaFormatoFile  ?formato}
+                OPTIONAL { ?dataset property:URLdataset     ?URLdataset}
+                OPTIONAL { ?dataset property:URLsezione     ?URLsezione}
+                OPTIONAL { ?dataset property:TracciaRecordAttributiDataset ?tracciaRecordAttributi}
+                OPTIONAL { ?dataset property:Ubicazione   ?UbicazionePresenzaAttributo}
+                OPTIONAL { ?dataset property:IndirizzoCompleto ?IndirizzoCompletoPresenzaAttributo}
+                OPTIONAL { ?dataset property:DatiCatastali ?DatiCatastaliPresenzaAttributo}
+                OPTIONAL { ?dataset property:FinalitaUtilizzo ?FinalitaUtilizzoPrezenza}
+                OPTIONAL { ?dataset property:Superficie ?SuperficiePresenzaAttributo}
+                OPTIONAL { ?dataset property:CanoneCorrisposto   ?CanoneCorrispostoPresenzaAttributo} 
+                OPTIONAL { ?dataset property:PeriodicitaCanone   ?PeriodicitaCanonePresenzaAttributo}
+                OPTIONAL { ?dataset property:CanoneIniziale    ?CanoneInizialePresenzaAttributo}
+                OPTIONAL { ?dataset property:DataStipulaContratto   ?DataStipulaContrattoPresenzaAttributo}
+                OPTIONAL { ?dataset property:DataScadenzaContratto  ?DataScadenzaContrattoPresenzaAttributo}
+                OPTIONAL { ?dataset property:Locatario   ?LocatarioPresenzaAttributo}
+                OPTIONAL { ?dataset property:DescrizioneImmobile   ?DescrizioneImmobilePresenzaAttributo}
+     FILTER (STR(?author) != "http://trasparenza.nexacenter.org/id/Utente-3ANexaBot")
+     OPTIONAL { ?dataset property:FileNonPubblicato ?NonPubblicato}
+     OPTIONAL { ?dataset property:ErroreNelFilePubblicato ?PubblicatoMale}
+     OPTIONAL { ?ente property:URIdbpedia ?URIdbpediaEnte} 
+       
+    }
+
+## Locazioni Passive
+
+    PREFIX categoria:   <http://trasparenza.nexacenter.org/id/Categoria-3A>
+    PREFIX property: <http://trasparenza.nexacenter.org/id/Propriet-C3-A0-3A>
+    PREFIX entity: <http://trasparenza.nexacenter.org/id/>
+    SELECT distinct ?dataset ?formato ?URLdataset ?URLsezione ?tracciaRecordAttributi ?UbicazionePresenzaAttributo ?IndirizzoCompletoPresenzaAttributo ?DatiCatastaliPresenzaAttributo ?FinalitaUtilizzoPrezenza
+     ?SuperficiePresenzaAttributo ?CanoneCorrispostoPresenzaAttributo ?PeriodicitaCanonePresenzaAttributo 
+     ?CanoneInizialePresenzaAttributo ?DataStipulaContrattoPresenzaAttributo ?DataScadenzaContrattoPresenzaAttributo
+     ?LocatorePresenzaAttributo ?DescrizioneImmobilePresenzaAttributo ?NonPubblicato ?PubblicatoMale ?URIdbpediaEnte
+    WHERE
+    {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?dataset a categoria:CanoneLocazionePassivo;
+                           property:Last_editor_is-23aux ?author;
+                           property:RiguardaEnte   ?ente.
+                OPTIONAL { ?dataset property:HaFormatoFile  ?formato}
+                OPTIONAL { ?dataset property:URLdataset     ?URLdataset}
+                OPTIONAL { ?dataset property:URLsezione     ?URLsezione}
+                OPTIONAL { ?dataset property:TracciaRecordAttributiDataset ?tracciaRecordAttributi}
+                OPTIONAL { ?dataset property:Ubicazione   ?UbicazionePresenzaAttributo}
+                OPTIONAL { ?dataset property:IndirizzoCompleto ?IndirizzoCompletoPresenzaAttributo}
+                OPTIONAL { ?dataset property:DatiCatastali ?DatiCatastaliPresenzaAttributo}
+                OPTIONAL { ?dataset property:FinalitaUtilizzo ?FinalitaUtilizzoPrezenza}
+                OPTIONAL { ?dataset property:Superficie ?SuperficiePresenzaAttributo}
+                OPTIONAL { ?dataset property:CanoneCorrisposto   ?CanoneCorrispostoPresenzaAttributo} 
+                OPTIONAL { ?dataset property:PeriodicitaCanone   ?PeriodicitaCanonePresenzaAttributo}
+                OPTIONAL { ?dataset property:CanoneIniziale    ?CanoneInizialePresenzaAttributo}
+                OPTIONAL { ?dataset property:DataStipulaContratto   ?DataStipulaContrattoPresenzaAttributo}
+                OPTIONAL { ?dataset property:DataScadenzaContratto  ?DataScadenzaContrattoPresenzaAttributo}
+                OPTIONAL { ?dataset property:Locatore   ?LocatorePresenzaAttributo}
+                OPTIONAL { ?dataset property:DescrizioneImmobile   ?DescrizioneImmobilePresenzaAttributo}
+     FILTER (STR(?author) != "http://trasparenza.nexacenter.org/id/Utente-3ANexaBot")
+     OPTIONAL { ?dataset property:FileNonPubblicato ?NonPubblicato}
+     OPTIONAL { ?dataset property:ErroreNelFilePubblicato ?PubblicatoMale}
+     OPTIONAL { ?ente property:URIdbpedia ?URIdbpediaEnte} 
+       
+    }
+
+## Patrimonio Immobiliare
+
+    PREFIX categoria:   <http://trasparenza.nexacenter.org/id/Categoria-3A>
+    PREFIX property: <http://trasparenza.nexacenter.org/id/Propriet-C3-A0-3A>
+    PREFIX entity: <http://trasparenza.nexacenter.org/id/>
+    SELECT distinct ?dataset ?formato ?URLdataset ?URLsezione ?tracciaRecordAttributi ?UbicazionePresenzaAttributo ?IndirizzoCompletoPresenzaAttributo 
+    ?DatiCatastaliPresenzaAttributo ?SuperficiePresenzaAttributo ?PeriodoCostruzionePresenzaAttributo ?ValoreAttualePresenzaAttributo ?NonPubblicato ?PubblicatoMale ?URIdbpediaEnte
+    WHERE
+    {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?dataset a categoria:PatrimonioImmobiliare;
+                           property:Last_editor_is-23aux ?author;
+                           property:RiguardaEnte   ?ente.
+                OPTIONAL { ?dataset property:HaFormatoFile  ?formato}
+                OPTIONAL { ?dataset property:URLdataset     ?URLdataset}
+                OPTIONAL { ?dataset property:URLsezione     ?URLsezione}
+                OPTIONAL { ?dataset property:TracciaRecordAttributiDataset ?tracciaRecordAttributi}
+                OPTIONAL { ?dataset property:Ubicazione   ?UbicazionePresenzaAttributo}
+                OPTIONAL { ?dataset property:IndirizzoCompleto ?IndirizzoCompletoPresenzaAttributo}
+                OPTIONAL { ?dataset property:DatiCatastali ?DatiCatastaliPresenzaAttributo}
+                OPTIONAL { ?dataset property:Superficie ?SuperficiePresenzaAttributo}
+                OPTIONAL { ?dataset property:PeriodoCostruzione   ?PeriodoCostruzionePresenzaAttributo}
+                OPTIONAL { ?dataset property:ValoreAttuale   ?ValoreAttualePresenzaAttributo}
+     FILTER (STR(?author) != "http://trasparenza.nexacenter.org/id/Utente-3ANexaBot")
+     OPTIONAL { ?dataset property:FileNonPubblicato ?NonPubblicato}
+     OPTIONAL { ?dataset property:ErroreNelFilePubblicato ?PubblicatoMale}
+     OPTIONAL { ?ente property:URIdbpedia ?URIdbpediaEnte} 
+       
+    }
+
+
+## Atti di concessione
+
+    PREFIX categoria:   <http://trasparenza.nexacenter.org/id/Categoria-3A>
+    PREFIX property: <http://trasparenza.nexacenter.org/id/Propriet-C3-A0-3A>
+    PREFIX entity: <http://trasparenza.nexacenter.org/id/>
+    SELECT DISTINCT ?dataset ?formato ?URLdataset ?URLsezione ?tracciaRecordAttributi ?AttoConcessionePresenzaAttributo   ?DatiFiscaliBeneficiarioPresenzaAttributo   
+    ?ImportoBeneficioPresenzaAttributo   ?LinkCurriculiumSoggettoPresenzaAttributo   ?ModalitaSeguitaPerIndividuazioneBeneficiarioPresenzaAttributo   
+    ?NomeBeneficiarioPresenzaAttributo   ?ProgettoFinanziatoPresenzaAttributo ?LinkProgettoFinanziatoPresenzaAttributo   ?FunzionarioResponsabileSussidioPresenzaAttributo   
+    ?UfficioResponsabileSussidioPresenzaAttributo
+    {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?dataset a categoria:AttiDiConcessione;
+                           property:Last_editor_is-23aux ?author;
+                           property:RiguardaEnte   ?ente.
+                OPTIONAL { ?dataset property:HaFormatoFile  ?formato}
+                OPTIONAL { ?dataset property:URLdataset     ?URLdataset}
+                OPTIONAL { ?dataset property:URLsezione     ?URLsezione}
+                OPTIONAL { ?dataset property:TracciaRecordAttributiDataset ?tracciaRecordAttributi}
+                OPTIONAL { ?dataset property:AttoConcessione ?AttoConcessionePresenzaAttributo} 
+                OPTIONAL { ?dataset property:DatiFiscaliBeneficiario ?DatiFiscaliBeneficiarioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:ImportoBeneficio ?ImportoBeneficioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:LinkCurriculiumSoggetto ?LinkCurriculiumSoggettoPresenzaAttributo} 
+                OPTIONAL { ?dataset property:ModalitaSeguitaPerIndividuazioneBeneficiario ?ModalitaSeguitaPerIndividuazioneBeneficiarioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:NomeBeneficiario ?NomeBeneficiarioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:ProgettoFinanziato ?ProgettoFinanziatoPresenzaAttributo} 
+                OPTIONAL { ?dataset property:LinkProgettoFinanziato ?LinkProgettoFinanziatoPresenzaAttributo} 
+                OPTIONAL { ?dataset property:FunzionarioResponsabileSussidio ?FunzionarioResponsabileSussidioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:UfficioResponsabileSussidio ?UfficioResponsabileSussidioPresenzaAttributo} 
+     FILTER (STR(?author) != "http://trasparenza.nexacenter.org/id/Utente-3ANexaBot")
+     OPTIONAL { ?dataset property:FileNonPubblicato ?NonPubblicato}
+     OPTIONAL { ?dataset property:ErroreNelFilePubblicato ?PubblicatoMale}
+     OPTIONAL { ?ente property:URIdbpedia ?URIdbpediaEnte} 
+       
+    }
+
+    order by asc (?dataset)
+
+
+## Albo beneficiari
+
+    PREFIX categoria:   <http://trasparenza.nexacenter.org/id/Categoria-3A>
+    PREFIX property: <http://trasparenza.nexacenter.org/id/Propriet-C3-A0-3A>
+    PREFIX entity: <http://trasparenza.nexacenter.org/id/>
+    SELECT DISTINCT ?dataset ?formato ?URLdataset ?URLsezione ?tracciaRecordAttributi ?DatiFiscaliBeneficiarioPresenzaAttributo   
+    ?ImportoBeneficioPresenzaAttributo      
+    ?NomeBeneficiarioPresenzaAttributo   ?DescrizioneOggetto ?AnnoRiferimentoDataset
+    {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?dataset a categoria:AlboBeneficiari;
+                           property:Last_editor_is-23aux ?author;
+                           property:RiguardaEnte   ?ente.
+                OPTIONAL { ?dataset property:HaFormatoFile  ?formato}
+                OPTIONAL { ?dataset property:URLdataset     ?URLdataset}
+                OPTIONAL { ?dataset property:URLsezione     ?URLsezione}
+                OPTIONAL { ?dataset property:AnnoRiferimentoDataset  ?AnnoRiferimentoDataset}
+                OPTIONAL { ?dataset property:TracciaRecordAttributiDataset ?tracciaRecordAttributi}
+                OPTIONAL { ?dataset property:DatiFiscaliBeneficiario ?DatiFiscaliBeneficiarioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:ImportoBeneficio ?ImportoBeneficioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:NomeBeneficiario ?NomeBeneficiarioPresenzaAttributo} 
+                OPTIONAL { ?dataset property:DescrizioneOggetto ?DescrizioneOggetto} 
+     
+     FILTER (STR(?author) != "http://trasparenza.nexacenter.org/id/Utente-3ANexaBot")
+     OPTIONAL { ?dataset property:FileNonPubblicato ?NonPubblicato}
+     OPTIONAL { ?dataset property:ErroreNelFilePubblicato ?PubblicatoMale}
+     OPTIONAL { ?ente property:URIdbpedia ?URIdbpediaEnte} 
+       
+    }
+
+    order by asc (?dataset)
+
+
+## Formati open per sezione (con html tabellare incluso):
+
+    PREFIX categoria:   <http://trasparenza.nexacenter.org/id/Categoria-3A>
+    PREFIX property: <http://trasparenza.nexacenter.org/id/Propriet-C3-A0-3A>
+    PREFIX entity: <http://trasparenza.nexacenter.org/id/>
+    SELECT ?sezione count(?setformato)
+    WHERE {
+    {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?setformato a ?sezione;
+                property:HaFormatoFile entity:Csv;
+                property:RiguardaEnte ?ente.
+    } UNION
+    {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?setformato a ?sezione;
+                property:RiguardaEnte ?ente;
+                property:HaFormatoFile entity:Ods.
+    }
+    UNION
+    {
+    ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?setformato a ?sezione;
+                property:RiguardaEnte ?ente;
+                property:HaFormatoFile entity:xml.
+     }
+    UNION
+    {
+    ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?sezione rdfs:subClassOf* ?x.
+     ?setformato a ?sezione;
+                property:RiguardaEnte ?ente;
+                property:HaFormatoFile entity:Html_tabellare.
+     }
+    }
+
+
+## Formati utilizzati con numerosità
+
+    PREFIX categoria:   <http://trasparenza.nexacenter.org/id/Categoria-3A>
+    PREFIX property: <http://trasparenza.nexacenter.org/id/Propriet-C3-A0-3A>
+    PREFIX entity: <http://trasparenza.nexacenter.org/id/>
+    SELECT ?formatoFile count(?formatoFile) AS ?formato
+    WHERE {
+     ?x rdfs:subClassOf categoria:ObbligoTrasparenza.
+     ?y rdfs:subClassOf* ?x.
+     ?setformato a ?y;
+                property:HaFormatoFile ?formatoFile;
+                property:RiguardaEnte ?ente.
+                
+    }
+
+    order by desc (?formato)
