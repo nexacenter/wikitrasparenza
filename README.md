@@ -1,19 +1,19 @@
-# Progetto Wikitrasparenza
+# Progetto WikiTrasparenza
 
 ## Indice
 Il seguente progetto è composto da:
 
-1. Report "#WikiTrasparenza chi apre davvero i dati sulle risorse pubbliche"
+1. Report "#WikiTrasparenza - Chi apre davvero i dati sulle risorse pubbliche"
 2. Nota metodologica al report
 3. Dati analizzati
 4. Query SPARQL per interrogare la wiki
 5. Dump CSV dei file presenti nella wiki
 
 ## Report
-Il report, in cui vengono esposti i risultati dell'analisi dei dati, è disponibile a questo indirizzo: http://nexa.polito.it/working-paper/2015-1
+Il report, in cui vengono esposti i risultati dell'analisi dei dati, è disponibile a questo indirizzo: http://nexa.polito.it/working-paper/2015-1.
 
 ## Nota metodologica
-Nella nota metodologica viene spiegato come è stata costruita la wiki semantica, come sono strutturati i dati, come è avvenuto il censimento dei dataset.Disponibile su: http://nexa.polito.it/nexacenterfiles/nota-metodologica-report-trasparenza.pdf
+Nella nota metodologica viene spiegato come è stata costruita la wiki semantica, come sono strutturati i dati, come è avvenuto il censimento dei dataset. Disponibile su: http://nexa.polito.it/nexacenterfiles/nota-metodologica-report-trasparenza.pdf.
 
 ## Query SPARQL
 Le query SPARQL per interrogare i dati della wiki sono nel file "Queries.SPARQL". L'endpoint SPARQL è presente all'indirizzo: https://trasparenza.nexacenter.org/sparql 
